@@ -47,8 +47,7 @@ def new_entry():
     return p_template('post')
 
 @bottle.post('/blog')
-def add_entry():
-    
+def add_entry():    
     data=dict()
     data['TITLE']=bottle.request.forms.get('title')
     data['AUTHOR']=bottle.request.forms.get('author')

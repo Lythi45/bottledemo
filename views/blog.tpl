@@ -8,3 +8,6 @@
   </div>
 %end
 
+<div class="blog-pagination">
+    <a class="btn btn-primary" href="/post">Add new entry</a>
+</div>
