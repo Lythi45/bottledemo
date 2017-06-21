@@ -22,26 +22,12 @@
       <div class="container">
        <nav class="nav blog-nav">
     % try:
-        % if page == 'index':
-            <a class="nav-link active" href="/">Home</a>
-        % else:
-            <a class="nav-link" href="/">Home</a>
-        % end
-        % if page == 'blog':
-            <a class="nav-link active" href="/blog">Blog</a>
-        % else:
-            <a class="nav-link" href="/blog">Blog</a>
-        % end
-        % if page == 'post':
-            <a class="nav-link active" href="/post">New post</a>
-        % else:
-            <a class="nav-link" href="/post">New post</a>
-        % end
-        % if page == 'about':
-            <a class="nav-link active" href="/about">About</a>
-        % else:
-            <a class="nav-link" href="/about">About</a>
-        % end
+ 
+            <a class="nav-link {{('','active')[page=='index']}}" href="/">Home</a>       
+            <a class="nav-link {{('','active')[page=='blog']}}" href="/blog">Blog</a>    
+            <a class="nav-link {{('','active')[page=='post']}}" href="/post">New post</a>    
+            <a class="nav-link {{('','active')[page=='about']}}" href="/about">About</a>
+     
     % except NameError:
         <a class="nav-link" href="/">Home</a>
         <a class="nav-link" href="/blog">Blog</a>
