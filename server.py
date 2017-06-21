@@ -35,7 +35,11 @@ def blog():
 
 def get_dao():
     import dao
-    return dao.MockDataAccessObject()
+    if __name__ == "__main__":
+        return dao.MockDataAccessObject()
+    else:
+        return dao.DataAccessObject()
+        
     
 
 @bottle.get('/post')
@@ -50,8 +54,6 @@ def add_entry():
     data['AUTHOR']=bottle.request.forms.get('author')
     data['CONTENT']=bottle.request.forms.get('content')
     data['POST_DATE']=datetime.datetime.now()
-    print ("test")
-    print(data)
     with get_dao() as data_access_object:
         data_access_object.insert(data)
     return blog()
@@ -61,4 +63,6 @@ def add_entry():
 
 
 application = bottle.default_app()
-application.run()
+
+if __name__ == "__main__":
+    application.run()   
